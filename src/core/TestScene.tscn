@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c8h063b1f26hd"]
+
+[ext_resource type="PackedScene" uid="uid://cdk7wevj7po7w" path="res://src/player/CharacterBase.tscn" id="1_ggmpf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ggmpf"]
+size = Vector2(868, 20)
+
+[node name="TestScene" type="Node2D"]
+
+[node name="CharacterBase" parent="." instance=ExtResource("1_ggmpf")]
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(128, 600)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(424, 0)
+shape = SubResource("RectangleShape2D_ggmpf")

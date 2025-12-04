@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdk7wevj7po7w"]
+
+[ext_resource type="Script" uid="uid://s2o8r82jxdrd" path="res://src/player/CharacterBase.gd" id="1_04nx0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_04nx0"]
+
+[node name="CharacterBase" type="CharacterBody2D"]
+script = ExtResource("1_04nx0")
+
+[node name="SpriteRoot" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite2D" parent="SpriteRoot"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_04nx0")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+
+[node name="HitboxManager" type="Node2D" parent="."]
+
+[node name="AnimationPlayer_Movement" type="AnimationPlayer" parent="."]
+
+[node name="AnimationPlayer_Attacks" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimationPlayer_Forms")
+
+[node name="AnimationPlayer_Forms" type="AnimationPlayer" parent="."]
+root_node = NodePath("")
