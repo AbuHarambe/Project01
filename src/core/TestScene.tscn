@@ -1,13 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://c8h063b1f26hd"]
+[gd_scene load_steps=5 format=3 uid="uid://c8h063b1f26hd"]
 
 [ext_resource type="PackedScene" uid="uid://cdk7wevj7po7w" path="res://src/player/CharacterBase.tscn" id="1_ggmpf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ggmpf"]
 size = Vector2(868, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xki3k"]
+size = Vector2(143, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5cs6u"]
+size = Vector2(363.00006, 20)
+
 [node name="TestScene" type="Node2D"]
 
 [node name="CharacterBase" parent="." instance=ExtResource("1_ggmpf")]
+position = Vector2(552, 170)
 
 [node name="Floor" type="StaticBody2D" parent="."]
 position = Vector2(128, 600)
@@ -15,3 +22,26 @@ position = Vector2(128, 600)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
 position = Vector2(424, 0)
 shape = SubResource("RectangleShape2D_ggmpf")
+
+[node name="Floor2" type="StaticBody2D" parent="."]
+position = Vector2(304, 251)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor2"]
+position = Vector2(61.5, 0)
+shape = SubResource("RectangleShape2D_xki3k")
+
+[node name="Wall left" type="StaticBody2D" parent="."]
+position = Vector2(304, 261)
+rotation = 1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall left"]
+position = Vector2(168.5, -0.00015258789)
+shape = SubResource("RectangleShape2D_5cs6u")
+
+[node name="Wall right" type="StaticBody2D" parent="."]
+position = Vector2(427, 261)
+rotation = 1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall right"]
+position = Vector2(168.5, -0.00015258789)
+shape = SubResource("RectangleShape2D_5cs6u")
