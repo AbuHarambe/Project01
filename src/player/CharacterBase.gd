@@ -333,7 +333,6 @@ func _apply_attack_momentum_start(axis: float) -> void:
 				-air_side_light_max_horizontal_speed,
 				air_side_light_max_horizontal_speed
 			)
-
 		&"light_air_down":
 			# Diagonal dive kick:
 			# short stall first (handled via air_down_light_stall_timer)
